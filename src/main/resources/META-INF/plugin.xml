@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.zone.sweet.upload_here</id>
+    <name>Upload Here</name>
+    <vendor email="zzz@11221.com" url="http://www.xxx.com">sweetzone</vendor>
+
+    <description>some some some some some some sweetzone sweetzone sweetzone sweetzone </description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+      <!-- Add your extensions here -->
+      <applicationService serviceImplementation="com.zone.sweet.settings.AppSettingsState"/>
+      <applicationConfigurable parentId="tools" instance="com.zone.sweet.settings.AppSettingsConfigurable"
+                               id="com.zone.sweet.settings.AppSettingsConfigurable"
+                               displayName="Upload Here"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+      <action id="com.zone.sweet.action" class="UploadHereAction" text="UploadHere" description="here!">
+        <add-to-group group-id="ToolsMenu" anchor="last"/>
+        <keyboard-shortcut keymap="$default" first-keystroke="shift alt P"/>
+      </action>
+    </actions>
+</idea-plugin>
