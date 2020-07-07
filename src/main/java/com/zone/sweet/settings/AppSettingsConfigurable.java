@@ -22,7 +22,6 @@ public class AppSettingsConfigurable implements Configurable {
         return "Upload Here";
     }
 
-    @Override
     public JComponent getPreferredFocusedComponent() {
         return uploadHereSettingsComponent.getPreferredFocusedComponent();
     }

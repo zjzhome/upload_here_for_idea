@@ -11,7 +11,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
-import com.sun.istack.Nullable;
 import com.zone.sweet.settings.*;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -29,7 +28,6 @@ import java.io.IOException;
 
 public class UploadHereAction extends AnAction {
 
-    @Nullable
     private VirtualFile getChooseFileLocalPath(Project project) {
         // 选择图片文件
         FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(true, false, false, false, false, false);
@@ -51,7 +49,6 @@ public class UploadHereAction extends AnAction {
         return null;
     }
 
-    @Nullable
     private String uploadImage(String uploadUrl, String filePath) {
         //Creating CloseableHttpClient object
         CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -127,6 +124,11 @@ public class UploadHereAction extends AnAction {
         // 获取配置
         AppSettingsState settings = AppSettingsState.getInstance();
         String uploadUrl = settings.uploadUrl;
+
+        if(uploadUrl == null) {
+            Messages.showErrorDialog("请先配置图片上传接口地址", "Upload Here");
+            return;
+        }
 
         // 选择文件
         VirtualFile virtualFile = getChooseFileLocalPath(project);

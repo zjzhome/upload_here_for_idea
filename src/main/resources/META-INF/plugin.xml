@@ -1,13 +1,15 @@
 <idea-plugin>
     <id>com.zone.sweet.upload_here</id>
     <name>Upload Here</name>
-    <vendor email="zzz@11221.com" url="http://www.xxx.com">sweetzone</vendor>
+    <vendor email="zjzhome@126.com" url="https://github.com/zjzhome/upload_here_for_idea">SweetZone</vendor>
 
-    <description>some some some some some some sweetzone sweetzone sweetzone sweetzone </description>
+    <description>A IntelliJ Idea plugin, short cut here, upload here! </description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
+
+    <idea-version since-build="181.*" until-build="201.*" />
 
     <extensions defaultExtensionNs="com.intellij">
       <!-- Add your extensions here -->
@@ -19,7 +21,7 @@
 
     <actions>
         <!-- Add your actions here -->
-      <action id="com.zone.sweet.action" class="UploadHereAction" text="UploadHere" description="here!">
+      <action id="com.zone.sweet.action" class="UploadHereAction" text="Upload Here" description="Upload here!">
         <add-to-group group-id="ToolsMenu" anchor="last"/>
         <keyboard-shortcut keymap="$default" first-keystroke="shift alt P"/>
       </action>

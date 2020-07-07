@@ -4,10 +4,10 @@ plugins {
 }
 
 group 'com.zone.sweet'
-version '1.0-SNAPSHOT'
+version '1.4-SNAPSHOT'
 
 repositories {
-    mavenCentral()
+    maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
 }
 
 dependencies {
@@ -17,7 +17,8 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2020.1.2'
+    version '2019.3'
+    type 'IU'
 }
 patchPluginXml {
     changeNotes """
